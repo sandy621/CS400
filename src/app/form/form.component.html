@@ -1,0 +1,18 @@
+
+<h4>Enter your IP Address to figure out your exact location</h4>
+
+
+  <label>IP Address:
+    <input type="text" [(ngModel)]="ipAddress" placeholder="(ex: 146.77.58.119)"/>
+  </label>
+  <button (click)="getLocation()" [disabled]="!ipAddress">
+    Get Location
+  </button>
+  <div *ngIf="!ipAddress">
+    Error: IP Address is required and must be at least 1 character!
+  </div>
+
+
+<br><br>
+
+<app-result [locationRes]= "locationResult"></app-result>
